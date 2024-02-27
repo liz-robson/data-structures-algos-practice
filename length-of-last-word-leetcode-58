@@ -1,0 +1,16 @@
+// Leetcode 58
+// Given a string s consisting of some words separated by some number of spaces, return the length of the last word in the string.
+// A word is a maximal substring consisting of non-space characters only.
+
+var lengthOfLastWord = function (s) {
+  let array = s.split(" ");
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === "") {
+      array.splice(i, 1);
+      i--;
+    }
+  }
+  console.log(array);
+  let result = array[array.length - 1];
+  return result.length;
+};
