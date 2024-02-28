@@ -1,0 +1,15 @@
+function solution(A) {
+  let hashMap = {};
+  for (let i = 0; i < A.length; i++) {
+    if (hashMap.hasOwnProperty(A[i])) {
+      hashMap[A[i]] += 1;
+    } else {
+      hashMap[A[i]] = 1;
+    }
+  }
+  for (let key in hashMap) {
+    if (hashMap[key] === 1) {
+      return Number(key);
+    }
+  }
+}
